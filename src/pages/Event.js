@@ -98,10 +98,12 @@ export default function Event() {
                             //     "-img.png"
                             // }`}
                             url={require(`../data/intro/${data.media[idFilter]?.src}`)}
+                            className="media"
                         />
                     ) : (
                         <img
                             src={require(`../data/intro/${data.media[idFilter]?.src}`)}
+                            className="media"
                         />
                     )}
                     <span
