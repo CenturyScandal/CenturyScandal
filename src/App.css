@@ -1,38 +1,558 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;500;600;700&family=Marhey:wght@300;400;500;600;700&display=swap");
+
+* {
+    font-family: "Josefin Sans", sans-serif;
+    font-family: "Marhey", sans-serif;
+}
+.home {
+    margin: auto;
+    padding-bottom: 90px;
+    padding-top: 160px;
+}
+.home .home-header {
+    text-align: center;
+    font-size: 48px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.home .time {
+    position: relative;
+    height: 40px;
+    width: 100px;
+    margin: auto;
+    text-align: center;
+    line-height: 42px;
+    background-color: #3f3f3f;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 40px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.home div:not(:last-child) .time::after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 40px;
+    background-color: #3f3f3f;
+    top: 100%;
+    left: 50%;
+    transition: 0.3s;
+    transform: translateX(-50%);
+}
+.home .time:hover {
+    background-color: #962a2a;
+}
+/* .home div.time:hover::after{
+    background-color: #CD2827;
+
+} */
+.home .active {
+    background-color: #962a2a;
+}
+.home div.active::after {
+    background-color: #cd2827;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home > div {
+    position: relative;
+}
+.home .pop {
+    position: absolute;
+    width: 40%;
+    top: -10px;
+    left: calc(50% + 70px);
+    background-color: #3f3f3f;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 5px;
+    /* padding-left: 20px; */
+}
+.home .pop h3 {
+    font-weight: 500;
+    margin: 0;
+    margin-top: 30px;
+}
+.home .pop .link {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    z-index: 3;
+}
+.home .pop .link:hover {
+    text-decoration: underline;
+}
+.home .pop .close {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    font-size: 18px;
+    /* transition: .2s; */
+}
+.home .pop .close:hover {
+    color: #fa4444;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* start events */
+.event {
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 160px;
+}
+.event .back-button {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.event .back-button:hover {
+    text-decoration: underline;
+}
+.event .title {
+    text-align: center;
+    font-size: 36px;
+    margin: 0;
+    margin-top: 30px;
+}
+.event .description {
+    text-align: center;
+    max-width: 80%;
+    margin: auto;
+    font-size: 18px;
+    margin-top: 16px;
+}
+.event .resourses {
+    text-align: center;
+}
+.event .resourses h3 {
+    margin: 0;
+    font-size: 26px;
+    margin-top: 20px;
+}
+.event .resourses a {
+    color: white;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.event .resourses a:hover {
+    text-decoration: underline;
+}
+.event .resourses .links {
+    margin-left: 20px;
+}
+.event .viewer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+.event .viewer span {
+    display: block;
+    cursor: pointer;
+    font-size: 48px;
+}
+.event .viewer .cancle {
+    cursor: default;
+    opacity: 0.5;
+}
+.event .imgs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+.event .imgs .img {
+    overflow: hidden;
+    width: calc(100% / 4 - 25px);
+    height: 177.5px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    align-items: center;
+    display: flex;
+
+    /* background-color: rgba(15,15,15,.8); */
+}
+.event .imgs .img:hover {
+    border-radius: 0;
+}
+.event .imgs .img img {
+    max-width: 100%;
+    /* min-width: 100%; */
+    /* max-height: 200px;  */
+    min-height: 100%;
+    border-radius: 10px;
+
+    transition: 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.event .imgs .img:hover img {
+    transform: scale(1.1);
+}
+/* end event  */
+/* start from  */
+.form {
+    padding-top: 160px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 40px;
+}
+.form > h1 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 34px;
+}
+.form > h3 {
+    font-size: 26px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+.form > p {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+}
+.form .form-content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+.form .form-content .left,
+.form .form-content .right {
+    width: 50%;
+}
+.form .form-content .left > div {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 40px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.form .form-content .left label {
+    display: block;
+    width: 25%;
+}
+.form .form-content .left input,
+.form .form-content .left textarea {
+    min-width: 75%;
+    min-height: 50px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    color: white;
+
+    text-indent: 5px;
+}
+.form .form-content .left input::placeholder,
+.form .form-content .left textarea::placeholder {
+    color: white;
+    opacity: 0.8;
+}
+.form .form-content .left input:focus,
+.form .form-content .left textarea:focus {
+    outline: none;
+}
+.form .form-content .left button {
+    /* display: block;
+    margin: auto; */
+    margin-top: 20px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #ccc;
+    padding: 5px 30px;
+    min-width: 64px;
+    min-height: 44px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+.form .form-content .left button:hover {
+    background-color: white;
+    border-color: white;
+    color: #0f0f0f;
+}
+.form .form-content .right {
+    padding-left: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.form .form-content .right > div ol ul {
+    margin-bottom: 10px;
+    list-style: none;
 }
+.form .form-content .right > div p {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+/* end form */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .home{
+        padding-top: 100px;
+    }
+    .home .home-header {
+        font-size: 38px;
+        margin-top: 30px;
+    }
+    .home .pop {
+        position: relative;
+        left: 0;
+        width: 100%;
+    }
+    .home .pop div {
+        padding-top: 5px;
+    }
+    .home .pop div h3{
+        line-height: 26px;
+        margin-bottom: 10px;
+    }
+    .home div:not(:last-child) .pop::after {
+        position: absolute;
+        content: "";
+        width: 4px;
+
+        height: 12px;
+        background-color: #3f3f3f;
+        top: 100%;
+        left: 50%;
+        transition: 0.3s;
+        transform: translateX(-50%);
+    }
+    /* Event  */
+    .event {
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-top: 120px;
+    }
+    .event .title {
+        font-size: 30px;
+    }
+    .event .imgs {
+        flex-direction: column;
+    }
+    .event .imgs .img {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .event .description {
+        font-size: 16px;
+        max-width: 100%;
+    }
+    .event .viewer span {
+        font-size: 36px;
+    }
+    .event .back-button {
+        font-size: 16px;
+    }
+    /* form  */
+    .form {
+        padding-top: 120px;
+        padding-right: 20px;
+
+        padding-left: 20px;
+    }
+    .form > h1 {
+        font-size: 30px;
+    }
+    .form .form-content {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .form .form-content .left,
+    .form .form-content .right {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .form .form-content .left > div{
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;
+    }
+    .form .form-content .left label {
+        text-align: center;
+        min-width: 100%;
+    }
+    .form .form-content .left input,
+    .form .form-content .left textarea {
+        min-width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        min-height: 60px;
+    }
+    .form .form-content .left button {
+        display: block;
+        margin: auto;
+    }
+    .form .form-content .right{
+        margin-bottom: 40px;
+    }
+    .form .form-content .right > div ol ul {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+        list-style: none;
+    }
+    .form .form-content .right > div p {
+        font-size: 24px;
+        text-align: center;
+    }
+    .form .thank-message{
+        font-size: 18px;
+    }
 }
+@media (min-width: 481px) and (max-width: 768px) {
+    .home {
+        padding-top: 120px;
+    }
+    .home .home-header {
+        font-size: 45px;
+        margin-top: 30px;
+    }
+    .home .pop {
+        position: relative;
+        left: 0;
+        width: 65%;
+        margin: auto;
+        text-align: center;
+        padding:0 10px;
+        padding-bottom: 20px;
+
+    }
+    .home .pop div {
+        padding-top: 1px;
+    }
+    .home .pop div h3{
+        line-height: 26px;
+        margin-bottom: 10px;
+    }
+    .home div:not(:last-child) .pop::after {
+        position: absolute;
+        content: "";
+        width: 4px;
+
+        height: 12px;
+        background-color: #3f3f3f;
+        top: 100%;
+        left: 50%;
+        transition: 0.3s;
+        transform: translateX(-50%);
+    }
+    /* Event  */
+    .event {
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-top: 120px;
+    }
+    .event .title {
+        font-size: 32px;
+    }
+    .event .imgs {
+        flex-direction: row;
+    }
+    .event .imgs .img {
+        min-width: 44%;
+        max-width: 44%;
+    }
+    .event .description {
+        font-size: 17px;
+        max-width: 90%;
+    }
+    .event .viewer span {
+        font-size: 36px;
+    }
+    .event .back-button {
+        font-size: 20px;
+    }
+    /* form  */
+    .form {
+        padding-top: 120px;
+        padding-right: 20px;
+
+        padding-left: 20px;
+    }
+    .form > h1 {
+        font-size: 36px;
+    }
+    .form .form-content {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .form .form-content .left,
+    .form .form-content .right {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .form .form-content .left > div{
+        padding: 0;
+        justify-content: center;
+    }
+    .form .form-content .left label {
+        min-width: 25%;
+    }
+    .form .form-content .left input,
+    .form .form-content .left textarea {
+        min-width: 75%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        min-height: 60px;
+    }
+    .form .form-content .left button {
+        display: block;
+        margin: auto;
+    }
+    .form .form-content .right{
+        margin-bottom: 40px;
+    }
+    .form .form-content .right > div ol ul {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+        list-style: none;
+    }
+    .form .form-content .right > div p {
+        font-size: 26px;
+        text-align: center;
+    }
+    .form .thank-message{
+        font-size: 20px;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .home .pop div h3{
+        line-height: 26px;
+        margin-bottom: 10px;
+    }
+    .event .imgs {
+        flex-direction: row;
+    }
+    .event .imgs .img {
+        min-width: 44%;
+        max-width: 44%;
+    }
+    .form .form-content .left label {
+        min-width: 30%;
+    }
+    .form .form-content .left input,
+    .form .form-content .left textarea {
+        min-width: 70%;
+    
+    }
+    .form .form-content .left > div{
+        padding: 0;
+    }
+}
+/* @media (min-width: 1025px) and (max-width: 1200px) {
+}
+@media (min-width: 1201px) {
+} */
