@@ -88,24 +88,29 @@ export default function Event() {
                     >
                         &lt;
                     </span>
-                    {data.media[idFilter].isVideo ? (
-                        <ReactPlayer
-                            // playing
-                            // muted
-                            controls
-                            // poster={`../data/intro/${
-                            //     data.media[idFilter]?.src.split(".")[0] +
-                            //     "-img.png"
-                            // }`}
-                            url={require(`../data/intro/${data.media[idFilter]?.src}`)}
-                            className="media"
-                        />
-                    ) : (
-                        <img
-                            src={require(`../data/intro/${data.media[idFilter]?.src}`)}
-                            className="media"
-                        />
-                    )}
+                    <div className="media-container">
+                        {data.media[idFilter].isVideo ? (
+                            <ReactPlayer
+                                // playing
+                                // muted
+                                controls
+                                // poster={`../data/intro/${
+                                //     data.media[idFilter]?.src.split(".")[0] +
+                                //     "-img.png"
+                                // }`}
+                                url={require(`../data/intro/${data.media[idFilter]?.src}`)}
+                                className="media"
+                            />
+                        ) : (
+                            <img
+                                src={require(`../data/intro/${data.media[idFilter]?.src}`)}
+                                className="media"
+                            />
+                        )}{data.media[idFilter].desc&&
+                        <p>
+                            {data.media[idFilter].desc}
+                        </p>}
+                    </div>
                     <span
                         className="right"
                         onClick={handleSlideRight}

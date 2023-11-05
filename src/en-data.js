@@ -488,14 +488,17 @@ export default {
                         {
                             src: "tantura-1.mp4",
                             isVideo: true,
-                            vidPic: "",
-                            desc: "",
+                            desc: "An Israeli veteran talks about horrible crimes were made by another Israeli soldier during the tantura massacre",
                         },
                         {
                             src: "tantura-2.mp4",
                             isVideo: true,
-                            vidPic: "",
-                            desc: "",
+                            desc: "An Israeli veteran talking about his crimes during the tantura massacre",
+                        },
+                        {
+                            src: "tantura-3.mp4",
+                            isVideo: true,
+                            desc: "An Israeli veteran talks about raping a Palestinian girl by another Israeli soldier during the tantura massacre",
                         },
                     ],
                 },
